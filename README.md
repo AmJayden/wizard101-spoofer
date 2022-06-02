@@ -1,6 +1,11 @@
 # wizard101-spoofer
 Spoof your HWID on Wizard101 and log events and packets by name
 
+# Credits
+[@CompiledCode](https://github.com/Compiled-Code/) - Co author of this project
+
+[@xgladius](https://github.com/xgladius/) - Giving us insight and details on any questions we had
+
 # How to use
 Using any auto attaching injector, inject `Wizard101 Spoofer.dll` into the game as soon as it starts, or launch it with the embedded login screen and inject before logging in.
 
