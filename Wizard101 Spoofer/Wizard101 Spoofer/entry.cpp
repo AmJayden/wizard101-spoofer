@@ -2,6 +2,7 @@
 #include <thread>
 #include <mutex>
 #include <functional>
+#include <string_view>
 #include <unordered_map>
 
 #include <Windows.h>
@@ -35,12 +36,12 @@ namespace packet
 	
 	std::string random_string( const std::size_t length )
 	{
-		static const auto chars = "01234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@#$%^&*()-=_+{}|\\\";'/.,<>?:";
+		static const std::string_view chars = "01234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`~!@#$%^&*()-=_+{}|\\\";'/.,<>?:";
 		std::string str( length, '\0' );
 		
 		std::generate_n( str.begin( ), length, [ ]
 		{
-			return chars[ std::rand( ) % 10 ];
+			return chars[ std::rand( ) % chars.size( ) ];
 		} );
 
 		return str;
